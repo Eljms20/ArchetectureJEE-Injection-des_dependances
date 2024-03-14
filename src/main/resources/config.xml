@@ -3,4 +3,12 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-</beans>
+    <!-- creer un objet Dao de classe daoImp-->
+     <bean id="d" class="ext.DaoImpV2"></bean>
+     <!-- creer un objet metier de la calsse MetierImp-->
+     <bean   id="metier" class="metier.MetierImpl">
+        <!-- injection de dependances -->
+         <!-- //<property name="dao" ref="d"></property>-->
+          <constructor-arg ref="d"></constructor-arg>
+     </bean>
+ </beans>
